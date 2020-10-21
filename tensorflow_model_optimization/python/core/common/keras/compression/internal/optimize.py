@@ -264,7 +264,8 @@ def _map_to_training_weights(
           # suggests that the `value` cannot be any arbitrary shape and
           # only a single scalar value. It works in this implementation
           # to make `value` any tensor - check this.
-          training_weights.append(weight_repr.initializer(shape=None))
+          training_weights.append(weight_repr.initializer(
+              shape=None, dtype=weight_repr.dtype))
       else:
         training_weights.append(pretrained_weight)
   return training_weights
