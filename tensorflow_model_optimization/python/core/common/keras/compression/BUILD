@@ -12,3 +12,27 @@ py_library(
         # tensorflow dep1,
     ],
 )
+
+py_library(
+    name = "schedules",
+    srcs = ["schedules.py"],
+    srcs_version = "PY3",
+    deps = [
+        # tensorflow dep1,
+    ],
+)
+
+py_test(
+    name = "schedules_test",
+    srcs = [
+        "schedules_test.py",
+    ],
+    python_version = "PY3",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":schedules",
+        # absl/testing:parameterized dep1,
+        # numpy dep1,
+        # tensorflow dep1,
+    ],
+)
